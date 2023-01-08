@@ -1,0 +1,104 @@
+totalsweets = 0
+totaldrinks = 0
+
+
+def printMain(): #prints main menu
+    print("\t\t | MAIN MENU | \n\t")
+    print("\t\t [1] DRINKS \t\n")
+    print("\t\t [2] SWEETS \t\n")  
+        
+def printDrinks():#prints lists of drinks
+    
+    totaldrinks = 0 #default value in the beginning
+    
+    print("\n\t| DRINKS |\n")  
+    print("\t 1. Coca Cola (4.00) \n\t 2. Fanta (4.00) \n\t 3. Sprite (4.00) \n\t 4. Mineral Water (1.00) \n\t 5. Main Menu\n")
+    while True:
+        
+        answer = input("Select a drink: ") #asks for a user input for the snack chosen
+        
+        if answer == "1":
+            print("Coca Cola (4.00) has been added.")
+            totaldrinks = totaldrinks + 4.00
+        elif answer == "2":
+            print("Fanta (4.00) has been added.")
+            totaldrinks = totaldrinks + 4.00
+        elif answer == "3":
+            print("Sprite (4.00) has been added.")
+            totaldrinks = totaldrinks + 4.00
+        elif answer == "4":
+            print("Mineral Water (1.00) has been added.")
+            totaldrinks = totaldrinks + 1.00
+        elif answer == "5":
+            print("Your current total due is", totaldrinks)
+            break
+        else:
+            print("Input is invalid")
+    return totaldrinks #this returns the value of totalsnack
+
+def printSweets():#prints lists of sweets
+    
+    totalsweets = 0 #default value in the beginning
+    
+    print("\n\t | SWEETS |\n") 
+    print("\t 1. Kit Kat (2.50) \n\t 2. Oreo (3.00) \n\t 3. Cheetos (4.00) \n\t 4. Mars (3.50)\n\t 5. Main Menu\n")
+        
+    while True:
+        
+        answer = input("Select a snack: ") #asks for a user input for the snack chosen
+        
+        if answer == "1":
+            print("Kit Kat (2.50) has been added.")
+            totalsweets = totalsweets + 2.50
+        elif answer == "2":
+            print("Oreo (3.00) has been added.")
+            totalsweets = totalsweets + 3.00
+        elif answer == "3":
+            print("Cheetos (4.00) has been added.")
+            totalsweets = totalsweets + 4.00
+        elif answer == "4":
+            print("Mars (3.50) has been added.")
+            totalsweets = totalsweets + 3.50
+        elif answer == "5":
+            print("Your current total due is", totalsweets)
+            break 
+        else:
+            print("Input is invalid")
+            
+    return totalsweets #this returns the value of totalsnack
+
+def printPay(totalsweets, totaldrinks):
+    
+    amount = totalsweets + totaldrinks #the total of the drinks and sweets amount combined
+    print("Your total amount is", amount)
+    
+    while True:
+         cash = float(input("Enter your cash: ")) #Asks the user to input their money
+         print("You have given", cash)
+         change = cash - amount #formula for the change the user gets
+         
+         if cash < amount: #if statement checking if the cash given is less than the amount needed to pay
+                print("Insufficient funds.")
+         else:
+                print("Your change is", change) #prints the amount of money returned to the user
+                print("Thank you for using this vending machine!")
+                break
+
+#Actual Vending Machine
+amount = 0
+
+printMain() #the menu being printed
+
+while True:
+    
+        choice = input("Enter '1' to check our available drinks.\nEnter '2' to check our available sweets.\nEnter '3' to pay.\nENTER THE NUMBER: ") 
+
+        if choice == "1":
+            totaldrinks = printDrinks() #drinks Menu Printed
+        elif choice == "2":
+            totalsweets = printSweets() #sweets Menu Printed
+        elif choice == "3":
+            printPay(totalsweets, totaldrinks)
+            break
+        else:
+            print("Input is Invalid.")
