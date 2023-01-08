@@ -1,0 +1,56 @@
+#exercise 1
+print("exercise 1\n")
+# print for displaying a sentence
+print("Twikle, twinkle, little star, How I wonder What you are! Up above the world so high, like a diamond in the sky. Twinkle, twinkle, little star, How I wonder what you are") 
+
+
+
+#exercise 2
+
+print("\nexercise 2\n")
+
+from platform import python_version 
+
+#"python_version" imports the version of python and displays it by using print
+print("Current Python version-", python_version())
+print
+
+
+
+#Exercise 3
+
+print("\nexercise 3\n")
+
+# importing datetime module
+import datetime
+
+# using now to get current time
+current_time = datetime.datetime.now()
+
+# Printing value of now.
+print ("Time now is:", current_time)
+print
+
+#Excercise 4
+
+print("exercise 4\n")
+
+#Each variable is assigned a sentence to creat one whole sentence
+x = "Hi I am"
+y = "Albert Aldrin Bunagan"
+z = "from UAE"
+
+print(x,y,z)
+
+#Exercise 5
+print("Exercise 5\n")
+#Used for inputing only numbers
+rad = int(input('Please enter the radius of the circle: '))
+
+#The equation for the circumference of a circle
+equ = 2*3.141592653589793*rad
+
+#print final answer
+print(equ)
+
+
